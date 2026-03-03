@@ -1,0 +1,32 @@
+﻿[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcbac"
+version = "0.1.0"
+description = "Python package wrapper for the m-CBAC charge assignment workflow"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+  { name = "m-CBAC Contributors" }
+]
+keywords = ["materials", "mof", "cif", "charge-assignment", "fortran"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Operating System :: POSIX"
+]
+
+[project.scripts]
+mcbac = "mcbac.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+mcbac = ["assets/*"]
